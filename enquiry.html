@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiry Now - Scan Reality | Luxury Apartments in West Pune</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="enquiry.css">
+
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <div class="h-10 w-10 text-sky-400" fill="currentColor" viewBox="0 0 24 24">
+                            <img src="scan-removebg-preview.png" alt="">
+                        </div>
+                        <span class="ml-2 text-2xl font-bold text-gray-800">Scan Reality</span>
+                    </div>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="nav-link text-gray-700 hover:text-sky-500 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="index.html#about" class="nav-link text-gray-700 hover:text-sky-500 px-3 py-2 text-sm font-medium">About Us</a>
+                        <a href="index.html#projects" class="nav-link text-gray-700 hover:text-sky-500 px-3 py-2 text-sm font-medium">Projects</a>
+                        <a href="gallery.html" class="nav-link text-gray-700 hover:text-sky-500 px-3 py-2 text-sm font-medium">Our Achievements</a>
+                        <a href="blog.html" class="nav-link text-gray-700 hover:text-sky-500 px-3 py-2 text-sm font-medium">Blogs</a>
+                        <a href="index.html#contact" class="nav-link text-gray-700 hover:text-sky-500 px-3 py-2 text-sm font-medium">Contact Us</a>
+                    </div>
+                </div>
+                
+                <!-- Call Button -->
+                <div class="hidden md:block">
+                    <a href="tel:+919175773955" class="btn-secondary">Call Now</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-sky-500">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-sky-500">Home</a>
+                <a href="index.html#about" class="block px-3 py-2 text-gray-700 hover:text-sky-500">About Us</a>
+                <a href="index.html#projects" class="block px-3 py-2 text-gray-700 hover:text-sky-500">Projects</a>
+                <a href="index.html#contact" class="block px-3 py-2 text-gray-700 hover:text-sky-500">Contact Us</a>
+                <a href="tel:+919876543210" class="btn-secondary mt-4 ml-3">Call Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center">
+                <div class="fade-in">
+                    <h1 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                        Find Your <span class="text-sky-500">Dream Home</span> Today
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                        Complete our simple enquiry form and let our experts help you discover the perfect luxury apartment in West Pune. Get personalized recommendations and exclusive offers.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enquiry Form Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Progress Bar -->
+            <div class="progress-bar fade-in">
+                <div class="progress-fill" id="progressFill" style="width: 25%"></div>
+            </div>
+            
+            <!-- Step Indicators -->
+            <div class="step-indicator fade-in">
+                <div class="step active" id="step1">1</div>
+                <div class="step-connector" id="connector1"></div>
+                <div class="step" id="step2">2</div>
+                <div class="step-connector" id="connector2"></div>
+                <div class="step" id="step3">3</div>
+                <div class="step-connector" id="connector3"></div>
+                <div class="step" id="step4">4</div>
+            </div>
+
+            <form id="enquiryForm" class="bg-white rounded-2xl shadow-xl p-8 slide-in-left">
+                <!-- Step 1: Personal Information -->
+                <div class="form-step active" id="formStep1">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Personal Information</h2>
+                        <p class="text-gray-600">Let's start with your basic details</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
+                            <input type="text" name="firstName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-400 focus:border-transparent transition-all duration-300" placeholder="Enter your first name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
+                            <input type="text" name="lastName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-400 focus:border-transparent transition-all duration-300" placeholder="Enter your last name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                            <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-400 focus:border-transparent transition-all duration-300" placeholder="Enter your email">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                            <input type="tel" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-400 focus:border-transparent transition-all duration-300" placeholder="Enter your phone number">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Current City</label>
+                            <input type="text" name="currentCity" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-400 focus:border-transparent transition-all duration-300" placeholder="Enter your current city">
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-end mt-8">
+                        <button type="button" onclick="nextStep()" class="btn-primary px-8 py-3">
+                            Next Step
+                            <svg class="w-5 h-5 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Property Preferences -->
+                <div class="form-step" id="formStep2">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Property Preferences</h2>
+                        <p class="text-gray-600">Tell us about your ideal home</p>
+                    </div>
+                    
+                    <div class="space-y-8">
+                        <!-- Property Type -->
+                        <div>
+                            <label class="block text-lg font-medium text-gray-700 mb-4">Property Type *</label>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div class="checkbox-card" onclick="selectPropertyType('2bhk')">
+                                    <input type="radio" name="propertyType" value="2bhk" class="hidden">
+                                    <div class="text-center">
+                                        <div class="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                            <svg class="w-8 h-8 text-sky-500" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                            </svg>
+                                        </div>
+                                        <h3 class="font-semibold text-gray-800">2BHK</h3>
+                                        <p class="text-sm text-gray-600">Perfect for small families</p>
+                                    </div>
+                                </div>
+                                <div class="checkbox-card" onclick="selectPropertyType('2.5bhk')">
+                                    <input type="radio" name="propertyType" value="2.5bhk" class="hidden">
+                                    <div class="text-center">
+                                        <div class="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                            <svg class="w-8 h-8 text-sky-500" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                            </svg>
+                                        </div>
+                                        <h3 class="font-semibold text-gray-800">2.5BHK</h3>
+                                        <p class="text-sm text-gray-600">Extra space & comfort</p>
+                                    </div>
+                                </div>
+                                <div class="checkbox-card" onclick="selectPropertyType('3bhk')">
+                                    <input type="radio" name="propertyType" value="3bhk" class="hidden">
+                                    <div class="text-center">
+                                        <div class="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                            <svg class="w-8 h-8 text-sky-500" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                            </svg>
+                                        </div>
+                                        <h3 class="font-semibold text-gray-800">3BHK</h3>
+                                        <p class="text-sm text-gray-600">Spacious luxury living</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Budget Range -->
+                        <div>
+                            <label class="block text-lg font-medium text-gray-700 mb-4">Budget Range *</label>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                                <div class="checkbox-card" onclick="selectBudget('50-75')">
+                                    <input type="radio" name="budget" value="50-75" class="hidden">
+                                    <div class="text-center">
+                                        <h3 class="font-semibold text-gray-800">₹50L - ₹75L</h3>
+                                        <p class="text-sm text-gray-600">Affordable luxury</p>
+                                    </div>
+                                </div>
+                                <div class="checkbox-card" onclick="selectBudget('75-100')">
+                                    <input type="radio" name="budget" value="75-100" class="hidden">
+                                    <div class="text-center">
+                                        <h3 class="font-semibold text-gray-800">₹75L - ₹1Cr</h3>
+                                        <p class="text-sm text-gray-600">Premium range</p>
+                                    </div>
+                                </div>
+                                <div class="checkbox-card" onclick="selectBudget('100-150')">
+                                    <input type="radio" name="budget" value="100-150" class="hidden">
+                                    <div class="text-center">
+                                        <h3 class="font-semibold text-gray-800">₹1Cr - ₹1.5Cr</h3>
+                                        <p class="text-sm text-gray-600">Luxury segment</p>
+                                    </div>
+                                </div>
+                                <div class="checkbox-card" onclick="selectBudget('150-200')">
+                                    <input type="radio" name="budget" value="150-200" class="hidden">
+                                    <div class="text-center">
+                                        <h3 class="font-semibold text-gray-800">₹1.5Cr - ₹2Cr</h3>
+                                        <p class="text-sm text-gray-600">Ultra luxury</p>
+                                    </div>
+                                </div>
+                                <div class="checkbox-card" onclick="selectBudget('200+')">
+                                    <input type="radio" name="budget" value="200+" class="hidden">
+                                    <div class="text-center">
+                                        <h3 class="font-semibold text-gray-800">Above ₹2Cr</h3>
+                                        <p class="text-sm text-gray-600">Premium luxury</p>
+                                    </div>
+                                </div>
+                                <div class="checkbox-card" onclick="selectBudget('flexible')">
+                                    <input type="radio" name="budget" value="flexible" class="hidden">
+                                    <div class="text-center">
+                                        <h3 class="font-semibold text-gray-800">Flexible</h3>
+                                        <p class="text-sm text-gray-600">Open to options</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Preferred Location -->
+                        <div>
+                            <label class="block text-lg font-medium text-gray-700 mb-4">Preferred Location</label>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                                <div class="checkbox-card" onclick="toggleLocation('baner')">
+                                    <input type="checkbox" name="locations" value="baner" class="hidden">
+                                    <div class="text-center">
+                                        <h4 class="font-medium text-gray-800">Baner</h4>
+                                    </div>
+                                </div>
+                                <div class="checkbox-card" onclick="toggleLocation('wakad')">
+                                    <input type="checkbox" name="locations" value="wakad" class="hidden">
+                                    <div class="text-center">
+                                        <h4 class="font-medium text-gray-800">Wakad</h4>
+                                    </div>
+                                </div>
+                                <div class="checkbox-card" onclick="toggleLocation('hinjewadi')">
+                                    <input type="checkbox" name="locations" value="hinjewadi" class="hidden">
+                                    <div class="text-center">
+                                        <h4 class="font-medium text-gray-800">Hinjewadi</h4>
+                                    </div>
+                                </div>
+                                <div class="checkbox-card" onclick="toggleLocation('aundh')">
+                                    <input type="checkbox" name="locations" value="aundh" class="hidden">
+                                    <div class="text-center">
+                                        <h4 class="font-medium text-gray-800">Aundh</h4>
+                                    </div>
+                                </div>
+                                <div class="checkbox-card" onclick="toggleLocation('balewadi')">
+                                    <input type="checkbox" name="locations" value="balewadi" class="hidden">
+                                    <div class="text-center">
+                                        <h4 class="font-medium text-gray-800">Balewadi</h4>
+                                    </div>
+                                </div>
+                                <div class="checkbox-card" onclick="toggleLocation('kothrud')">
+                                    <input type="checkbox" name="locations" value="kothrud" class="hidden">
+                                    <div class="text-center">
+                                        <h4 class="font-medium text-gray-800">Kothrud</h4>
+                                    </div>
+                                </div>
+                                <div class="checkbox-card" onclick="toggleLocation('warje')">
+                                    <input type="checkbox" name="locations" value="warje" class="hidden">
+                                    <div class="text-center">
+                                        <h4 class="font-medium text-gray-800">Warje</h4>
+                                    </div>
+                                </div>
+                                <div class="checkbox-card" onclick="toggleLocation('any')">
+                                    <input type="checkbox" name="locations" value="any" class="hidden">
+                                    <div class="text-center">
+                                        <h4 class="font-medium text-gray-800">Any</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between mt-8">
+                        <button type="button" onclick="prevStep()" class="btn-secondary px-8 py-3">
+                            <svg class="w-5 h-5 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                            </svg>
+                            Previous
+                        </button>
+                        <button type="button" onclick="nextStep()" class="btn-primary px-8 py-3">
+                            Next Step
+                            <svg class="w-5 h-5 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Timeline & Purpose -->
+                <div class="form-step" id="formStep3">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Timeline & Purpose</h2>
+                        <p class="text-gray-600">When are you planning to buy?</p>
+                    </div>
+                    
+                    <div class="space-y-8">
+                        <!-- Purchase Timeline -->
+                        <div>
+                            <label class="block text-lg font-medium text-gray-700 mb-4">When are you planning to buy? *</label>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="checkbox-card" onclick="selectTimeline('immediate')">
+                                    <input type="radio" name="timeline" value="immediate" class="hidden">
+                                    <div class="flex items-center">
+                                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4">
+                                            <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold text-gray-800">Immediately</h3>
+                                            <p class="text-sm text-gray-600">Ready to buy now</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-card" onclick="selectTimeline('3months')">
+                                    <input type="radio" name="timeline" value="3months" class="hidden">
+                                    <div class="flex items-center">
+                                        <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                                            <svg class="w-6 h-6 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold text-gray-800">Within 3 months</h3>
+                                            <p class="text-sm text-gray-600">Planning soon</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-card" onclick="selectTimeline('6months')">
+                                    <input type="radio" name="timeline" value="6months" class="hidden">
+                                    <div class="flex items-center">
+                                        <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mr-4">
+                                            <svg class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold text-gray-800">Within 6 months</h3>
+                                            <p class="text-sm text-gray-600">Medium term planning</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-card" onclick="selectTimeline('1year')">
+                                    <input type="radio" name="timeline" value="1year" class="hidden">
+                                    <div class="flex items-center">
+                                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                            <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold text-gray-800">Within 1 year</h3>
+                                            <p class="text-sm text-gray-600">Long term planning</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Purpose -->
+                        <div>
+                            <label class="block text-lg font-medium text-gray-700 mb-4">Purpose of Purchase *</label>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div class="checkbox-card" onclick="selectPurpose('selfuse')">
+                                    <input type="radio" name="purpose" value="selfuse" class="hidden">
+                                    <div class="text-center">
+                                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                            <svg class="w-8 h-8 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                                            </svg>
+                                        </div>
+                                        <h3 class="font-semibold text-gray-800">Self Use</h3>
+                                        <p class="text-sm text-gray-600">Primary residence</p>
+                                    </div>
+                                </div>
+                                <div class="checkbox-card" onclick="selectPurpose('investment')">
+                                    <input type="radio" name="purpose" value="investment" class="hidden">
+                                    <div class="text-center">
+                                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                            <svg class="w-8 h-8 text-green-500" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 6.41L11 10.83 9.59 9.41 8.17 10.83 10.59 13.24 15.42 8.41 14 7z"/>
+                                            </svg>
+                                        </div>
+                                        <h3 class="font-semibold text-gray-800">Investment</h3>
+                                        <p class="text-sm text-gray-600">Rental income</p>
+                                    </div>
+                                </div>
+                                <div class="checkbox-card" onclick="selectPurpose('both')">
+                                    <input type="radio" name="purpose" value="both" class="hidden">
+                                    <div class="text-center">
+                                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                            <svg class="w-8 h-8 text-purple-500" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                            </svg>
+                                        </div>
+                                        <h3 class="font-semibold text-gray-800">Both</h3>
+                                        <p class="text-sm text-gray-600">Flexible options</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Financing -->
+                        <div>
+                            <label class="block text-lg font-medium text-gray-700 mb-4">Financing Option</label>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="checkbox-card" onclick="selectFinancing('loan')">
+                                    <input type="radio" name="financing" value="loan" class="hidden">
+                                    <div class="flex items-center">
+                                        <div class="w-12 h-12 bg-sky-100 rounded-full flex items-center justify-center mr-4">
+                                            <svg class="w-6 h-6 text-sky-500" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold text-gray-800">Home Loan</h3>
+                                            <p class="text-sm text-gray-600">Need financing assistance</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-card" onclick="selectFinancing('cash')">
+                                    <input type="radio" name="financing" value="cash" class="hidden">
+                                    <div class="flex items-center">
+                                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                            <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold text-gray-800">Cash Payment</h3>
+                                            <p class="text-sm text-gray-600">Self-financed</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between mt-8">
+                        <button type="button" onclick="prevStep()" class="btn-secondary px-8 py-3">
+                            <svg class="w-5 h-5 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                            </svg>
+                            Previous
+                        </button>
+                        <button type="button" onclick="nextStep()" class="btn-primary px-8 py-3">
+                            Next Step
+                            <svg class="w-5 h-5 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Additional Information -->
+                <div class="form-step" id="formStep4">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Additional Information</h2>
+                        <p class="text-gray-600">Help us serve you better</p>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Special Requirements</label>
+                            <textarea name="requirements" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-400 focus:border-transparent transition-all duration-300" placeholder="Any specific requirements or preferences..."></textarea>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">How did you hear about us?</label>
+                            <select name="source" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-400 focus:border-transparent transition-all duration-300">
+                                <option value="">Select source</option>
+                                <option value="google">Google Search</option>
+                                <option value="social">Social Media</option>
+                                <option value="referral">Friend/Family Referral</option>
+                                <option value="advertisement">Advertisement</option>
+                                <option value="website">Website</option>
+                                <option value="broker">Real Estate Broker</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Preferred Contact Time</label>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div class="checkbox-card" onclick="selectContactTime('morning')">
+                                    <input type="radio" name="contactTime" value="morning" class="hidden">
+                                    <div class="text-center">
+                                        <h4 class="font-medium text-gray-800">Morning</h4>
+                                        <p class="text-sm text-gray-600">9 AM - 12 PM</p>
+                                    </div>
+                                </div>
+                                <div class="checkbox-card" onclick="selectContactTime('afternoon')">
+                                    <input type="radio" name="contactTime" value="afternoon" class="hidden">
+                                    <div class="text-center">
+                                        <h4 class="font-medium text-gray-800">Afternoon</h4>
+                                        <p class="text-sm text-gray-600">12 PM - 5 PM</p>
+                                    </div>
+                                </div>
+                                <div class="checkbox-card" onclick="selectContactTime('evening')">
+                                    <input type="radio" name="contactTime" value="evening" class="hidden">
+                                    <div class="text-center">
+                                        <h4 class="font-medium text-gray-800">Evening</h4>
+                                        <p class="text-sm text-gray-600">5 PM - 8 PM</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-sky-50 rounded-lg p-6">
+                            <div class="flex items-start">
+                                <input type="checkbox" name="newsletter" id="newsletter" class="mt-1 mr-3">
+                                <label for="newsletter" class="text-sm text-gray-700">
+                                    I would like to receive updates about new projects, offers, and real estate market insights via email and SMS.
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-6">
+                            <div class="flex items-start">
+                                <input type="checkbox" name="terms" id="terms" required class="mt-1 mr-3">
+                                <label for="terms" class="text-sm text-gray-700">
+                                    I agree to the <a href="#" class="text-sky-500 hover:underline">Terms & Conditions</a> and <a href="#" class="text-sky-500 hover:underline">Privacy Policy</a>. I consent to being contacted by Scan Reality regarding my enquiry. *
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between mt-8">
+                        <button type="button" onclick="prevStep()" class="btn-secondary px-8 py-3">
+                            <svg class="w-5 h-5 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                            </svg>
+                            Previous
+                        </button>
+                        <button type="submit" class="btn-primary px-8 py-3 pulse-glow">
+                            Submit Enquiry
+                            <svg class="w-5 h-5 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Why Choose Scan Reality?</h2>
+                <p class="text-xl text-gray-600">Your trusted partner in finding the perfect home</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center scale-in">
+                    <div class="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-sky-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Expert Guidance</h3>
+                    <p class="text-gray-600">20+ years of experience in West Pune real estate</p>
+                </div>
+                
+                <div class="text-center scale-in">
+                    <div class="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-sky-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Premium Quality</h3>
+                    <p class="text-gray-600">Award-winning projects with world-class amenities</p>
+                </div>
+                
+                <div class="text-center scale-in">
+                    <div class="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-sky-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Transparent Process</h3>
+                    <p class="text-gray-600">No hidden costs, clear documentation</p>
+                </div>
+                
+                <div class="text-center scale-in">
+                    <div class="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-sky-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.5 6L12 10.5 8.5 8 12 5.5 15.5 8zM12 17.5L8.5 15 12 12.5 15.5 15 12 17.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">After-Sales Support</h3>
+                    <p class="text-gray-600">Lifetime support and property management</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="h-8 w-8 text-sky-400 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <img src="scan-removebg-preview.png" alt="">
+                        </div>
+                        <span class="text-xl font-bold">Scan Reality</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Crafting exceptional living experiences in West Pune with luxury apartments and world-class amenities.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <div class="space-y-2">
+                        <a href="index.html" class="block text-gray-300 hover:text-sky-400 transition-colors">Home</a>
+                        <a href="index.html#about" class="block text-gray-300 hover:text-sky-400 transition-colors">About Us</a>
+                        <a href="index.html#projects" class="block text-gray-300 hover:text-sky-400 transition-colors">Projects</a>
+                        <a href="gallery.html" class="block text-gray-300 hover:text-sky-400 transition-colors">Our Achievements</a>
+                        <a href="blog.html" class="block text-gray-300 hover:text-sky-400 transition-colors">Blogs</a>
+                        <a href="index.html#contact" class="block text-gray-300 hover:text-sky-400 transition-colors">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+                    <div class="space-y-2">
+                        <p class="text-gray-300">📍 Office No. 307, Speciality Business Center, Balewadi, Pune, Maharashtra 411045</p>
+                        <p class="text-gray-300">📞 +91 98765 43210</p>
+                        <p class="text-gray-300">✉️ info@scanreality.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 mt-8 text-center">
+                <p class="text-gray-300 text-sm">
+                        © 2025 <a href="https://www.instagram.com/the_patil_chetan?igsh=cGVvbXBtcWpiNnZy"> the_patil_chetan.</a> All rights reserved.| <a href="https://www.relinksys.com/">Relinksys
+                            Software Pvt. Ltd.</a>
+                    </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentStep = 1;
+        const totalSteps = 4;
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Animation observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Form step navigation
+        function nextStep() {
+            if (validateCurrentStep()) {
+                if (currentStep < totalSteps) {
+                    document.getElementById(`formStep${currentStep}`).classList.remove('active');
+                    document.getElementById(`step${currentStep}`).classList.remove('active');
+                    document.getElementById(`step${currentStep}`).classList.add('completed');
+                    
+                    if (currentStep > 1) {
+                        document.getElementById(`connector${currentStep - 1}`).classList.add('completed');
+                    }
+                    
+                    currentStep++;
+                    document.getElementById(`formStep${currentStep}`).classList.add('active');
+                    document.getElementById(`step${currentStep}`).classList.add('active');
+                    
+                    updateProgressBar();
+                    
+                    // Scroll to top of form
+                    document.getElementById('enquiryForm').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 1) {
+                document.getElementById(`formStep${currentStep}`).classList.remove('active');
+                document.getElementById(`step${currentStep}`).classList.remove('active');
+                
+                currentStep--;
+                document.getElementById(`formStep${currentStep}`).classList.add('active');
+                document.getElementById(`step${currentStep}`).classList.remove('completed');
+                document.getElementById(`step${currentStep}`).classList.add('active');
+                
+                if (currentStep > 1) {
+                    document.getElementById(`connector${currentStep - 1}`).classList.remove('completed');
+                }
+                
+                updateProgressBar();
+                
+                // Scroll to top of form
+                document.getElementById('enquiryForm').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        function updateProgressBar() {
+            const progress = (currentStep / totalSteps) * 100;
+            document.getElementById('progressFill').style.width = `${progress}%`;
+        }
+
+        function validateCurrentStep() {
+            const currentStepElement = document.getElementById(`formStep${currentStep}`);
+            const requiredFields = currentStepElement.querySelectorAll('[required]');
+            
+            for (let field of requiredFields) {
+                if (!field.value.trim()) {
+                    field.focus();
+                    field.classList.add('border-red-500');
+                    setTimeout(() => field.classList.remove('border-red-500'), 3000);
+                    return false;
+                }
+            }
+            
+            // Additional validation for step 2 (property preferences)
+            if (currentStep === 2) {
+                const propertyType = document.querySelector('input[name="propertyType"]:checked');
+                const budget = document.querySelector('input[name="budget"]:checked');
+                
+                if (!propertyType) {
+                    alert('Please select a property type');
+                    return false;
+                }
+                if (!budget) {
+                    alert('Please select a budget range');
+                    return false;
+                }
+            }
+            
+            // Additional validation for step 3 (timeline & purpose)
+            if (currentStep === 3) {
+                const timeline = document.querySelector('input[name="timeline"]:checked');
+                const purpose = document.querySelector('input[name="purpose"]:checked');
+                
+                if (!timeline) {
+                    alert('Please select your purchase timeline');
+                    return false;
+                }
+                if (!purpose) {
+                    alert('Please select the purpose of purchase');
+                    return false;
+                }
+            }
+            
+            return true;
+        }
+
+        // Selection functions
+        function selectPropertyType(type) {
+            document.querySelectorAll('input[name="propertyType"]').forEach(input => {
+                input.closest('.checkbox-card').classList.remove('selected');
+            });
+            
+            const selectedInput = document.querySelector(`input[name="propertyType"][value="${type}"]`);
+            selectedInput.checked = true;
+            selectedInput.closest('.checkbox-card').classList.add('selected');
+        }
+
+        function selectBudget(budget) {
+            document.querySelectorAll('input[name="budget"]').forEach(input => {
+                input.closest('.checkbox-card').classList.remove('selected');
+            });
+            
+            const selectedInput = document.querySelector(`input[name="budget"][value="${budget}"]`);
+            selectedInput.checked = true;
+            selectedInput.closest('.checkbox-card').classList.add('selected');
+        }
+
+        function toggleLocation(location) {
+            const input = document.querySelector(`input[name="locations"][value="${location}"]`);
+            const card = input.closest('.checkbox-card');
+            
+            if (location === 'any') {
+                // If "Any" is selected, uncheck all others
+                document.querySelectorAll('input[name="locations"]').forEach(inp => {
+                    inp.checked = false;
+                    inp.closest('.checkbox-card').classList.remove('selected');
+                });
+                input.checked = true;
+                card.classList.add('selected');
+            } else {
+                // If any specific location is selected, uncheck "Any"
+                const anyInput = document.querySelector('input[name="locations"][value="any"]');
+                if (anyInput.checked) {
+                    anyInput.checked = false;
+                    anyInput.closest('.checkbox-card').classList.remove('selected');
+                }
+                
+                input.checked = !input.checked;
+                card.classList.toggle('selected');
+            }
+        }
+
+        function selectTimeline(timeline) {
+            document.querySelectorAll('input[name="timeline"]').forEach(input => {
+                input.closest('.checkbox-card').classList.remove('selected');
+            });
+            
+            const selectedInput = document.querySelector(`input[name="timeline"][value="${timeline}"]`);
+            selectedInput.checked = true;
+            selectedInput.closest('.checkbox-card').classList.add('selected');
+        }
+
+        function selectPurpose(purpose) {
+            document.querySelectorAll('input[name="purpose"]').forEach(input => {
+                input.closest('.checkbox-card').classList.remove('selected');
+            });
+            
+            const selectedInput = document.querySelector(`input[name="purpose"][value="${purpose}"]`);
+            selectedInput.checked = true;
+            selectedInput.closest('.checkbox-card').classList.add('selected');
+        }
+
+        function selectFinancing(financing) {
+            document.querySelectorAll('input[name="financing"]').forEach(input => {
+                input.closest('.checkbox-card').classList.remove('selected');
+            });
+            
+            const selectedInput = document.querySelector(`input[name="financing"][value="${financing}"]`);
+            selectedInput.checked = true;
+            selectedInput.closest('.checkbox-card').classList.add('selected');
+        }
+
+        function selectContactTime(time) {
+            document.querySelectorAll('input[name="contactTime"]').forEach(input => {
+                input.closest('.checkbox-card').classList.remove('selected');
+            });
+            
+            const selectedInput = document.querySelector(`input[name="contactTime"][value="${time}"]`);
+            selectedInput.checked = true;
+            selectedInput.closest('.checkbox-card').classList.add('selected');
+        }
+
+        // Form submission
+        document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (!validateCurrentStep()) {
+                return;
+            }
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.innerHTML = `
+                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Submitting...
+            `;
+            submitBtn.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                // Show success message
+                const form = document.getElementById('enquiryForm');
+                form.innerHTML = `
+                    <div class="text-center py-12">
+                        <div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-12 h-12 text-green-500" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Thank You!</h2>
+                        <p class="text-xl text-gray-600 mb-6">Your enquiry has been submitted successfully.</p>
+                        <div class="bg-sky-50 rounded-lg p-6 mb-8">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-3">What happens next?</h3>
+                            <div class="space-y-2 text-left">
+                                <div class="flex items-center">
+                                    <div class="w-6 h-6 bg-sky-500 rounded-full flex items-center justify-center mr-3">
+                                        <span class="text-white text-sm font-bold">1</span>
+                                    </div>
+                                    <span class="text-gray-700">Our expert will call you within 2 hours</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-6 h-6 bg-sky-500 rounded-full flex items-center justify-center mr-3">
+                                        <span class="text-white text-sm font-bold">2</span>
+                                    </div>
+                                    <span class="text-gray-700">Receive personalized property recommendations</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-6 h-6 bg-sky-500 rounded-full flex items-center justify-center mr-3">
+                                        <span class="text-white text-sm font-bold">3</span>
+                                    </div>
+                                    <span class="text-gray-700">Schedule site visits at your convenience</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="index.html" class="btn-primary">Back to Home</a>
+                            <a href="tel:+919876543210" class="btn-secondary">Call Us Now</a>
+                        </div>
+                    </div>
+                `;
+                
+                // Update progress to 100%
+                document.getElementById('progressFill').style.width = '100%';
+                
+                // Update all steps to completed
+                for (let i = 1; i <= totalSteps; i++) {
+                    document.getElementById(`step${i}`).classList.remove('active');
+                    document.getElementById(`step${i}`).classList.add('completed');
+                    if (i < totalSteps) {
+                        document.getElementById(`connector${i}`).classList.add('completed');
+                    }
+                }
+                
+            }, 3000);
+        });
+
+        // Initialize
+        updateProgressBar();
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'972ab20c133785f0',t:'MTc1NTc4NTIzMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

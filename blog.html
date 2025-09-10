@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Scan Reality | Real Estate Insights & Market Updates</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="blog.css">
+    
+    
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <div class="h-10 w-10 text-sky-400" fill="currentColor" viewBox="0 0 24 24">
+                            <img src="scan-removebg-preview.png" alt="">
+                        </div>
+                        <span class="ml-2 text-2xl font-bold text-gray-800">Scan Reality</span>
+                    </div>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="nav-link text-gray-700 hover:text-sky-500 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="index.html#about" class="nav-link text-gray-700 hover:text-sky-500 px-3 py-2 text-sm font-medium">About Us</a>
+                        <a href="index.html#projects" class="nav-link text-gray-700 hover:text-sky-500 px-3 py-2 text-sm font-medium">Projects</a>
+                        <a href="gallery.html" class="nav-link text-gray-700 hover:text-sky-500 px-3 py-2 text-sm font-medium">Our Achievements</a>
+                        <a href="#" class="nav-link text-sky-500 px-3 py-2 text-sm font-medium border-b-2 border-sky-500">Blog</a>
+                        <a href="index.html#contact" class="nav-link text-gray-700 hover:text-sky-500 px-3 py-2 text-sm font-medium">Contact Us</a>
+                    </div>
+                </div>
+                
+                <!-- Call Button -->
+                <div class="hidden md:block">
+                    <a href="tel:+919876543210" class="btn-secondary">Call Now</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-sky-500">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-sky-500">Home</a>
+                <a href="index.html#about" class="block px-3 py-2 text-gray-700 hover:text-sky-500">About Us</a>
+                <a href="index.html#projects" class="block px-3 py-2 text-gray-700 hover:text-sky-500">Projects</a>
+                <a href="index.html#OurTeam" class="block px-3 py-2 text-gray-700 hover:text-sky-500">Our Team</a>
+                <a href="gallery.html" class="block px-3 py-2 text-gray-700 hover:text-sky-500">Our Achievements</a>
+                <a href="#" class="block px-3 py-2 text-sky-500 font-medium">Blog</a>
+                <a href="index.html#contact" class="block px-3 py-2 text-gray-700 hover:text-sky-500">Contact Us</a>
+                <a href="tel:+919876543210" class="btn-secondary mt-4 ml-3">Call Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center">
+                <div class="fade-in">
+                    <h1 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                        Real Estate <span class="text-sky-500">Insights</span> & Updates
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                        Stay informed with the latest trends, market analysis, and expert advice from West Pune's leading real estate professionals.
+                    </p>
+                    
+                    <!-- Search Box -->
+                    <div class="search-box mb-8">
+                        <div class="search-icon">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
+                        </div>
+                        <input type="text" id="searchInput" placeholder="Search articles, topics, or keywords..." onkeyup="searchArticles()">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Filter -->
+    <section class="py-8 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="category-filter fade-in">
+                <button class="category-btn active" onclick="filterByCategory('all')">All Articles</button>
+                <button class="category-btn" onclick="filterByCategory('market-trends')">Market Trends</button>
+                <button class="category-btn" onclick="filterByCategory('investment-tips')">Investment Tips</button>
+                <button class="category-btn" onclick="filterByCategory('home-buying')">Home Buying</button>
+                <button class="category-btn" onclick="filterByCategory('legal-guide')">Legal Guide</button>
+                <button class="category-btn" onclick="filterByCategory('lifestyle')">Lifestyle</button>
+                <button class="category-btn" onclick="filterByCategory('news')">News</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Article -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Featured Article</h2>
+                <p class="text-xl text-gray-600">Don't miss our top story this week</p>
+            </div>
+            
+            <div class="blog-card hover-lift scale-in relative overflow-hidden" data-category="market-trends">
+                <div class="featured-badge">Featured</div>
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+                    <div class="relative h-64 lg:h-auto">
+                        <div class="absolute inset-0 bg-gradient-to-br from-sky-400 to-blue-600 flex items-center justify-center">
+                            <svg class="w-24 h-24 text-white opacity-50" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-4 mb-4">
+                            <span class="category-tag">Market Trends</span>
+                            <div class="read-time">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                8 min read
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">West Pune Real Estate Market: 2024 Growth Predictions and Investment Hotspots</h3>
+                        <p class="text-gray-600 mb-6">Discover the emerging trends shaping West Pune's real estate landscape. From infrastructure developments to price predictions, get expert insights on where to invest in 2024.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="author-info">
+                                <div class="author-avatar">AR</div>
+                                <div>
+                                    <p class="font-semibold text-gray-800">Arjun Reddy</p>
+                                    <p class="text-sm text-gray-600">Senior Market Analyst</p>
+                                </div>
+                            </div>
+                            <button class="btn-primary" onclick="openArticle('featured-article')">Read More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Articles -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Latest Articles</h2>
+                <p class="text-xl text-gray-600">Stay updated with our recent insights</p>
+            </div>
+            
+            <div id="articlesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Article 1 -->
+                <article class="blog-card hover-lift slide-in-left" data-category="investment-tips">
+                    <div class="relative h-48 bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white opacity-50" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 6.41L11 10.83 9.59 9.41 8.17 10.83 10.59 13.24 15.42 8.41 14 7z"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-4 mb-3">
+                            <span class="category-tag">Investment Tips</span>
+                            <div class="read-time">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                5 min read
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">5 Smart Investment Strategies for First-Time Property Buyers</h3>
+                        <p class="text-gray-600 mb-4">Learn proven strategies to maximize your returns and minimize risks when investing in your first property in West Pune.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="author-info">
+                                <div class="author-avatar">PS</div>
+                                <div>
+                                    <p class="font-semibold text-gray-800 text-sm">Priya Sharma</p>
+                                    <p class="text-xs text-gray-600">Investment Advisor</p>
+                                </div>
+                            </div>
+                            <button class="text-sky-500 hover:text-sky-600 font-semibold" onclick="openArticle('investment-tips-1')">Read More →</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="blog-card hover-lift slide-in-left" data-category="home-buying">
+                    <div class="relative h-48 bg-gradient-to-br from-purple-400 to-indigo-600 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white opacity-50" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-4 mb-3">
+                            <span class="category-tag">Home Buying</span>
+                            <div class="read-time">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                7 min read
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Complete Home Buying Checklist: From Search to Settlement</h3>
+                        <p class="text-gray-600 mb-4">A comprehensive guide covering every step of the home buying process, ensuring you don't miss any crucial details.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="author-info">
+                                <div class="author-avatar">RK</div>
+                                <div>
+                                    <p class="font-semibold text-gray-800 text-sm">Rajesh Kumar</p>
+                                    <p class="text-xs text-gray-600">Property Consultant</p>
+                                </div>
+                            </div>
+                            <button class="text-sky-500 hover:text-sky-600 font-semibold" onclick="openArticle('home-buying-1')">Read More →</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="blog-card hover-lift slide-in-left" data-category="legal-guide">
+                    <div class="relative h-48 bg-gradient-to-br from-orange-400 to-red-600 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white opacity-50" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-4 mb-3">
+                            <span class="category-tag">Legal Guide</span>
+                            <div class="read-time">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                6 min read
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Understanding RERA: Your Rights as a Property Buyer</h3>
+                        <p class="text-gray-600 mb-4">Navigate the Real Estate Regulatory Authority guidelines and understand how they protect your interests as a buyer.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="author-info">
+                                <div class="author-avatar">SM</div>
+                                <div>
+                                    <p class="font-semibold text-gray-800 text-sm">Sneha Mehta</p>
+                                    <p class="text-xs text-gray-600">Legal Expert</p>
+                                </div>
+                            </div>
+                            <button class="text-sky-500 hover:text-sky-600 font-semibold" onclick="openArticle('legal-guide-1')">Read More →</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 4 -->
+                <article class="blog-card hover-lift slide-in-right" data-category="lifestyle">
+                    <div class="relative h-48 bg-gradient-to-br from-pink-400 to-rose-600 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white opacity-50" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-4 mb-3">
+                            <span class="category-tag">Lifestyle</span>
+                            <div class="read-time">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                4 min read
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Top 10 Amenities Modern Homebuyers Look For</h3>
+                        <p class="text-gray-600 mb-4">Discover the must-have amenities that today's homebuyers prioritize when choosing their dream home.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="author-info">
+                                <div class="author-avatar">AJ</div>
+                                <div>
+                                    <p class="font-semibold text-gray-800 text-sm">Amit Joshi</p>
+                                    <p class="text-xs text-gray-600">Lifestyle Writer</p>
+                                </div>
+                            </div>
+                            <button class="text-sky-500 hover:text-sky-600 font-semibold" onclick="openArticle('lifestyle-1')">Read More →</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 5 -->
+                <article class="blog-card hover-lift slide-in-right" data-category="news">
+                    <div class="relative h-48 bg-gradient-to-br from-teal-400 to-cyan-600 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white opacity-50" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-4 mb-3">
+                            <span class="category-tag">News</span>
+                            <div class="read-time">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                3 min read
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">New Metro Line to Boost Hinjewadi Property Values</h3>
+                        <p class="text-gray-600 mb-4">The upcoming metro connectivity is expected to significantly impact property prices in the Hinjewadi corridor.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="author-info">
+                                <div class="author-avatar">NK</div>
+                                <div>
+                                    <p class="font-semibold text-gray-800 text-sm">Neha Kapoor</p>
+                                    <p class="text-xs text-gray-600">News Reporter</p>
+                                </div>
+                            </div>
+                            <button class="text-sky-500 hover:text-sky-600 font-semibold" onclick="openArticle('news-1')">Read More →</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 6 -->
+                <article class="blog-card hover-lift slide-in-right" data-category="market-trends">
+                    <div class="relative h-48 bg-gradient-to-br from-yellow-400 to-orange-600 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white opacity-50" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-4 mb-3">
+                            <span class="category-tag">Market Trends</span>
+                            <div class="read-time">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                6 min read
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Sustainable Housing: The Future of Real Estate Development</h3>
+                        <p class="text-gray-600 mb-4">Explore how green building practices and sustainable design are reshaping the real estate industry.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="author-info">
+                                <div class="author-avatar">VT</div>
+                                <div>
+                                    <p class="font-semibold text-gray-800 text-sm">Vikram Thakur</p>
+                                    <p class="text-xs text-gray-600">Sustainability Expert</p>
+                                </div>
+                            </div>
+                            <button class="text-sky-500 hover:text-sky-600 font-semibold" onclick="openArticle('market-trends-1')">Read More →</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12 fade-in">
+                <button class="btn-primary px-8 py-3" onclick="loadMoreArticles()">
+                    Load More Articles
+                    <svg class="w-5 h-5 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="fade-in">
+                <h2 class="text-3xl font-bold mb-4">Stay Updated with Market Insights</h2>
+                <p class="text-xl mb-8 opacity-90">Get the latest real estate trends, investment tips, and market analysis delivered to your inbox.</p>
+                
+                <div class="max-w-md mx-auto">
+                    <div class="flex">
+                        <input type="email" class="newsletter-input" placeholder="Enter your email address" id="newsletterEmail">
+                        <button class="newsletter-btn" onclick="subscribeNewsletter()">Subscribe</button>
+                    </div>
+                    <p class="text-sm mt-4 opacity-75">Join 5,000+ subscribers. No spam, unsubscribe anytime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Tags -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Popular Topics</h2>
+                <p class="text-xl text-gray-600">Explore articles by popular tags</p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-4 scale-in">
+                <span class="bg-white px-6 py-3 rounded-full border border-sky-200 text-gray-700 hover:bg-sky-50 hover:border-sky-300 cursor-pointer transition-all duration-300">#PropertyInvestment</span>
+                <span class="bg-white px-6 py-3 rounded-full border border-sky-200 text-gray-700 hover:bg-sky-50 hover:border-sky-300 cursor-pointer transition-all duration-300">#WestPune</span>
+                <span class="bg-white px-6 py-3 rounded-full border border-sky-200 text-gray-700 hover:bg-sky-50 hover:border-sky-300 cursor-pointer transition-all duration-300">#HomeLoan</span>
+                <span class="bg-white px-6 py-3 rounded-full border border-sky-200 text-gray-700 hover:bg-sky-50 hover:border-sky-300 cursor-pointer transition-all duration-300">#RERA</span>
+                <span class="bg-white px-6 py-3 rounded-full border border-sky-200 text-gray-700 hover:bg-sky-50 hover:border-sky-300 cursor-pointer transition-all duration-300">#LuxuryHomes</span>
+                <span class="bg-white px-6 py-3 rounded-full border border-sky-200 text-gray-700 hover:bg-sky-50 hover:border-sky-300 cursor-pointer transition-all duration-300">#MarketTrends</span>
+                <span class="bg-white px-6 py-3 rounded-full border border-sky-200 text-gray-700 hover:bg-sky-50 hover:border-sky-300 cursor-pointer transition-all duration-300">#FirstTimeBuyer</span>
+                <span class="bg-white px-6 py-3 rounded-full border border-sky-200 text-gray-700 hover:bg-sky-50 hover:border-sky-300 cursor-pointer transition-all duration-300">#PropertyValuation</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="h-8 w-8 text-sky-400 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <img src="scan-removebg-preview.png" alt="">
+                        </div>
+                        <span class="text-xl font-bold">Scan Reality</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Crafting exceptional living experiences in West Pune with luxury apartments and world-class amenities.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <div class="space-y-2">
+                        <a href="index.html" class="block text-gray-300 hover:text-sky-400 transition-colors">Home</a>
+                        <a href="index.html#about" class="block text-gray-300 hover:text-sky-400 transition-colors">About Us</a>
+                        <a href="index.html#projects" class="block text-gray-300 hover:text-sky-400 transition-colors">Projects</a>
+                        <a href="index.html#OurTeam" class="block text-gray-300 hover:text-sky-400 transition-colors">Our Team</a>
+                        <a href="gallery.html" class="block text-gray-300 hover:text-sky-400 transition-colors">Our Achievements</a>
+                        <a href="#" class="block text-sky-400">Blog</a>
+                        <a href="enquiry.html" class="block text-gray-300 hover:text-sky-400 transition-colors">Enquiry</a>
+                    </div>
+                </div>
+                
+                <!-- Blog Categories -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Blog Categories</h3>
+                    <div class="space-y-2">
+                        <a href="#" class="block text-gray-300 hover:text-sky-400 transition-colors">Market Trends</a>
+                        <a href="#" class="block text-gray-300 hover:text-sky-400 transition-colors">Investment Tips</a>
+                        <a href="#" class="block text-gray-300 hover:text-sky-400 transition-colors">Home Buying Guide</a>
+                        <a href="#" class="block text-gray-300 hover:text-sky-400 transition-colors">Legal Advice</a>
+                        <a href="#" class="block text-gray-300 hover:text-sky-400 transition-colors">Lifestyle</a>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+                    <div class="space-y-2">
+                        <p class="text-gray-300">📍 Office No. 307, Speciality Business Center, Balewadi, Pune, Maharashtra 411045</p>
+                        <p class="text-gray-300">📞 +91 98765 43210</p>
+                        <p class="text-gray-300">✉️ info@scanreality.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 mt-8 text-center">
+                <p class="text-gray-300 text-sm">
+                        © 2025 <a href="https://www.instagram.com/the_patil_chetan?igsh=cGVvbXBtcWpiNnZy"> the_patil_chetan.</a> All rights reserved.| <a href="https://www.relinksys.com/">Relinksys
+                            Software Pvt. Ltd.</a>
+                    </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Animation observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Category filtering
+        function filterByCategory(category) {
+            const articles = document.querySelectorAll('#articlesGrid article');
+            const buttons = document.querySelectorAll('.category-btn');
+            
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter articles
+            articles.forEach(article => {
+                if (category === 'all' || article.dataset.category === category) {
+                    article.style.display = 'block';
+                    article.classList.add('slide-in-left');
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+        }
+
+        // Search functionality
+        function searchArticles() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const articles = document.querySelectorAll('#articlesGrid article');
+            
+            articles.forEach(article => {
+                const title = article.querySelector('h3').textContent.toLowerCase();
+                const content = article.querySelector('p').textContent.toLowerCase();
+                const category = article.querySelector('.category-tag').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || content.includes(searchTerm) || category.includes(searchTerm)) {
+                    article.style.display = 'block';
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+        }
+
+        // Open article (placeholder function)
+        function openArticle(articleId) {
+            // In a real application, this would navigate to the full article
+            alert(`Opening article: ${articleId}\n\nThis would navigate to the full article page in a real application.`);
+        }
+
+        // Load more articles
+        function loadMoreArticles() {
+            const button = event.target;
+            const originalText = button.innerHTML;
+            
+            // Show loading state
+            button.innerHTML = `
+                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Loading...
+            `;
+            button.disabled = true;
+            
+            // Simulate loading
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.disabled = false;
+                alert('More articles loaded! In a real application, this would load additional articles from the server.');
+            }, 2000);
+        }
+
+        // Newsletter subscription
+        function subscribeNewsletter() {
+            const email = document.getElementById('newsletterEmail').value;
+            
+            if (!email) {
+                alert('Please enter your email address');
+                return;
+            }
+            
+            if (!email.includes('@')) {
+                alert('Please enter a valid email address');
+                return;
+            }
+            
+            const button = event.target;
+            const originalText = button.textContent;
+            
+            button.textContent = 'Subscribing...';
+            button.disabled = true;
+            
+            setTimeout(() => {
+                button.textContent = 'Subscribed!';
+                button.style.background = '#10b981';
+                document.getElementById('newsletterEmail').value = '';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '';
+                    button.disabled = false;
+                }, 2000);
+            }, 1500);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add some initial animations
+            setTimeout(() => {
+                document.querySelectorAll('.blog-card').forEach((card, index) => {
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, index * 100);
+                });
+            }, 500);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'973133d2e5ac9a96',t:'MTc1NTg1MzQ2My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
